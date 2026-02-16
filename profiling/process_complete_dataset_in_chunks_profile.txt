@@ -1,0 +1,26 @@
+         135329421 function calls (131297417 primitive calls) in 4535.470 seconds
+
+   Ordered by: cumulative time
+   List reduced from 3068 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    35828   16.437    0.000 70040.334    1.955 /opt/venv/lib/python3.12/site-packages/dask/local.py:140(queue_get)
+    35828   10.890    0.000 56402.116    1.574 /usr/lib/python3.12/queue.py:154(get)
+35400/35399   16.322    0.000 45545.493    1.287 /usr/lib/python3.12/threading.py:323(wait)
+73203/23681   12.377    0.000 11045.102    0.466 /opt/venv/lib/python3.12/site-packages/pandas/core/generic.py:6463(astype)
+288457/160742    7.293    0.000 10030.783    0.062 /opt/venv/lib/python3.12/site-packages/pandas/core/series.py:389(__init__)
+23101/20422    7.848    0.000 9380.467    0.459 /opt/venv/lib/python3.12/site-packages/pandas/core/frame.py:4271(__setitem__)
+66040/54364   12.081    0.000 9101.325    0.167 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:421(astype)
+7163/5685    5.333    0.001 8401.726    1.478 /opt/venv/lib/python3.12/site-packages/dask/dataframe/io/csv.py:92(coerce_dtypes)
+14339/4572    8.644    0.001 7373.773    1.613 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/construction.py:423(dict_to_mgr)
+21502/6703    2.998    0.000 7197.478    1.074 /opt/venv/lib/python3.12/site-packages/pandas/core/frame.py:694(__init__)
+245261/196870   15.459    0.000 7042.328    0.036 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:317(apply)
+14339/7484   61.148    0.004 5734.796    0.766 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/construction.py:96(arrays_to_mgr)
+66040/54366    5.872    0.000 5572.338    0.102 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py:723(astype)
+317382/186378    8.341    0.000 4998.544    0.027 /opt/venv/lib/python3.12/site-packages/pandas/core/construction.py:517(sanitize_array)
+23101/20422    1.535    0.000 4763.765    0.233 /opt/venv/lib/python3.12/site-packages/pandas/core/frame.py:4514(_set_item)
+      2/1    0.520    0.260 4534.915 4534.915 /mnt/disks/ssd/big_data_full2.py:362(process_complete_dataset_in_chunks)
+61347/40058  207.529    0.003 4130.805    0.103 /opt/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py:2246(_stack_arrays)
+    14/13    0.001    0.000 4078.009  313.693 /opt/venv/lib/python3.12/site-packages/dask/base.py:349(compute)
+    14/13    0.000    0.000 4078.009  313.693 /opt/venv/lib/python3.12/site-packages/dask/base.py:597(compute)
+    14/13    0.027    0.002 4077.869  313.682 /opt/venv/lib/python3.12/site-packages/dask/threaded.py:38(get)

@@ -1,0 +1,490 @@
+================================================================================
+SYSTEM INFORMATION
+================================================================================
+CPU Count: 16 cores
+Available Memory: 62.8 GB
+Available Disk Space: 91.7 GB
+Python Process ID: 17721
+================================================================================
+ICU LENGTH OF STAY PREDICTION - FULL DATASET PROCESSING
+================================================================================
+Processing mode: COMPLETE DATASET
+Data path: /mnt/disks/ssd/
+Chunk size: 5000 patients
+Plot output: /mnt/disks/ssd/plots/
+Expected processing time: 2-4 hours for complete dataset
+
+🔄 Starting Phase: Data Loading & Exploration
+   Start Time: 17:21:37
+   Memory Usage: 260.8 MB
+
+================================================================================
+STEP 1: DATA LOADING AND INITIAL EXPLORATION
+================================================================================
+
+Loading metadata files...
+D_ITEMS: 12,487 clinical parameters
+ICUSTAYS: 61,532 ICU stays
+ADMISSIONS: 58,976 hospital admissions
+
+Preparing ICU cohort...
+ICU stays with valid times: 61,522
+LOS range: 0.0 - 4153.7 hours
+Mean LOS: 118.0 hours (4.9 days)
+
+Using COMPLETE dataset:
+  All patients: 61,522
+  Expected patients with monitoring data: ~27,684 (45% data coverage)
+
+Sample of ICU stays data:
+   ROW_ID_x  SUBJECT_ID_x  ...  HOSPITAL_EXPIRE_FLAG  HAS_CHARTEVENTS_DATA
+0       365           268  ...                     1                     1
+1       366           269  ...                     0                     1
+2       367           270  ...                     0                     1
+3       368           271  ...                     0                     1
+4       369           272  ...                     0                     1
+
+[5 rows x 31 columns]
+✅ Completed Phase: Data Loading & Exploration
+   Duration: 0.4 seconds (0.0 minutes)
+   Memory Delta: +70.9 MB
+   End Memory: 331.7 MB
+
+🔄 Starting Phase: Big Data Processing with Dask
+   Start Time: 17:21:37
+   Memory Usage: 331.7 MB
+
+================================================================================
+STEP 2: BIG DATA PROCESSING WITH DASK
+================================================================================
+
+Loading CHARTEVENTS with Dask...
+CHARTEVENTS loaded with Dask (lazy evaluation)
+Ready to process complete dataset (~330M records)
+
+Using 20 key clinical measurements:
+   1. Heart Rate (ID: 220045)
+   2. Respiratory Rate (ID: 220210)
+   3. O2 saturation pulseoxymetry (ID: 220277)
+   4. Non Invasive Blood Pressure systolic (ID: 220179)
+   5. Non Invasive Blood Pressure diastolic (ID: 220180)
+   6. Non Invasive Blood Pressure mean (ID: 220181)
+   7. Temperature Fahrenheit (ID: 223761)
+   8. Glucose (serum) (ID: 220621)
+   9. O2 Flow (ID: 223834)
+  10. GCS - Eye Opening (ID: 220739)
+  11. GCS - Verbal Response (ID: 223900)
+  12. GCS - Motor Response (ID: 223901)
+  13. Hemoglobin (ID: 220228)
+  14. Arterial CO2 Pressure (ID: 220235)
+  15. Resp Alarm - High (ID: 224161)
+  16. Creatinine (ID: 220615)
+  17. Glucose (whole blood) (ID: 226537)
+  18. WBC (ID: 220546)
+  19. Minute Volume (ID: 224687)
+  20. Sodium (serum) (ID: 220645)
+
+Starting complete dataset processing...
+
+Processing 61,522 patients in chunks of 5,000
+This will take 2-4 hours for the complete dataset...
+
+Chunk 1: Processing patients 1-5,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 29,499 valid measurements
+  Extracting patient features...
+  Chunk complete: 309 patients with monitoring data
+  Running total: 309 patients processed
+
+Chunk 2: Processing patients 5,001-10,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 35,761 valid measurements
+  Extracting patient features...
+  Chunk complete: 390 patients with monitoring data
+  Running total: 699 patients processed
+
+Chunk 3: Processing patients 10,001-15,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 31,302 valid measurements
+  Extracting patient features...
+  Chunk complete: 321 patients with monitoring data
+  Running total: 1,020 patients processed
+
+Chunk 4: Processing patients 15,001-20,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 33,370 valid measurements
+  Extracting patient features...
+  Chunk complete: 362 patients with monitoring data
+  Running total: 1,382 patients processed
+
+Chunk 5: Processing patients 20,001-25,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 35,681 valid measurements
+  Extracting patient features...
+  Chunk complete: 324 patients with monitoring data
+  Running total: 1,706 patients processed
+
+Chunk 6: Processing patients 25,001-30,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 35,027 valid measurements
+  Extracting patient features...
+  Chunk complete: 364 patients with monitoring data
+  Running total: 2,070 patients processed
+
+Chunk 7: Processing patients 30,001-35,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 66,994 valid measurements
+  Extracting patient features...
+  Chunk complete: 1153 patients with monitoring data
+  Running total: 3,223 patients processed
+
+Chunk 8: Processing patients 35,001-40,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 178,837 valid measurements
+  Extracting patient features...
+  Chunk complete: 2355 patients with monitoring data
+  Running total: 5,578 patients processed
+
+Chunk 9: Processing patients 40,001-45,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 365,814 valid measurements
+  Extracting patient features...
+  Chunk complete: 3843 patients with monitoring data
+  Running total: 9,421 patients processed
+
+Chunk 10: Processing patients 45,001-50,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 531,675 valid measurements
+  Extracting patient features...
+  Chunk complete: 4893 patients with monitoring data
+  Running total: 14,314 patients processed
+
+Chunk 11: Processing patients 50,001-55,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 545,366 valid measurements
+  Extracting patient features...
+  Chunk complete: 4919 patients with monitoring data
+  Running total: 19,233 patients processed
+
+Chunk 12: Processing patients 55,001-60,000
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 535,584 valid measurements
+  Extracting patient features...
+  Chunk complete: 4940 patients with monitoring data
+  Running total: 24,173 patients processed
+
+Chunk 13: Processing patients 60,001-61,522
+  Filtering CHARTEVENTS...
+  Converting to pandas...
+  Processing timestamps and joining data...
+  Found 161,932 valid measurements
+  Extracting patient features...
+  Chunk complete: 1504 patients with monitoring data
+  Running total: 25,677 patients processed
+
+Processing complete!
+  Successful chunks: 13
+  Total patients with monitoring data: 25,677
+  Data yield rate: 41.7%
+  Combining all patient features...
+  Final feature matrix size: (389102, 9)
+   Function process_complete_dataset_in_chunks profiled: 4535.48s
+   Profile saved to: /tmp/profiles/process_complete_dataset_in_chunks_profile.txt
+
+Feature extraction complete!
+  Total features extracted: 389,102
+  Unique patients: 25,677
+  Items covered: 20
+✅ Completed Phase: Big Data Processing with Dask
+   Duration: 4535.6 seconds (75.6 minutes)
+   Memory Delta: +11027.0 MB
+   End Memory: 11358.7 MB
+
+🔄 Starting Phase: Feature Matrix Creation
+   Start Time: 18:37:13
+   Memory Usage: 11357.7 MB
+
+================================================================================
+STEP 3: FEATURE MATRIX CREATION
+================================================================================
+
+Creating ML-Ready Feature Matrix...
+ML feature matrix created:
+  Shape: (25677, 40)
+  Mean features: 21
+  Count features: 20
+✅ Completed Phase: Feature Matrix Creation
+   Duration: 0.2 seconds (0.0 minutes)
+   Memory Delta: -2.8 MB
+   End Memory: 11354.9 MB
+
+🔄 Starting Phase: Data Preprocessing
+   Start Time: 18:37:13
+   Memory Usage: 11354.9 MB
+
+================================================================================
+STEP 4: DATA PREPROCESSING
+================================================================================
+
+Handling Missing Values...
+  Count features: Filled 0 missing values with 0
+  Missing values after imputation: 0
+
+Creating Temporal Features...
+  Added 3 temporal features
+
+Final feature matrix shape: (25677, 43)
+✅ Completed Phase: Data Preprocessing
+   Duration: 21.7 seconds (0.4 minutes)
+   Memory Delta: -20.8 MB
+   End Memory: 11334.1 MB
+
+🔄 Starting Phase: Target Variable Preparation
+   Start Time: 18:37:35
+   Memory Usage: 11334.1 MB
+
+================================================================================
+STEP 5: TARGET VARIABLE PREPARATION
+================================================================================
+Preparing Target Variables...
+  Patients with LOS data: 25,677
+  LOS range: 1.7 - 2441.7 hours
+  LOS mean: 88.5 hours (3.7 days)
+
+  LOS category distribution:
+    Medium (1-3d): 12,989 patients (50.6%)
+    Long (3-7d): 5,482 patients (21.3%)
+    Short (<1d): 4,105 patients (16.0%)
+    Very Long (>7d): 3,101 patients (12.1%)
+
+Creating Final Dataset...
+  Common patients: 25,677
+  Final dataset shape: (25677, 45)
+✅ Completed Phase: Target Variable Preparation
+   Duration: 0.0 seconds (0.0 minutes)
+   Memory Delta: -1.0 MB
+   End Memory: 11333.1 MB
+
+🔄 Starting Phase: Data Visualization and Analysis
+   Start Time: 18:37:35
+   Memory Usage: 11333.1 MB
+
+================================================================================
+STEP 5.5: DATA VISUALIZATION AND ANALYSIS
+================================================================================
+Creating plots and saving to /mnt/disks/ssd/plots/
+  Saved: los_distribution.png
+  Saved: correlation_matrix.png
+  Saved: feature_importance.png
+  Saved: dataset_overview.png
+  Saved: clinical_analysis.png
+
+Analysis plots saved to: /mnt/disks/ssd/plots/
+✅ Completed Phase: Data Visualization and Analysis
+   Duration: 5.6 seconds (0.1 minutes)
+   Memory Delta: -25.4 MB
+   End Memory: 11307.7 MB
+
+🔄 Starting Phase: Machine Learning Model Training
+   Start Time: 18:37:40
+   Memory Usage: 11307.7 MB
+
+================================================================================
+STEP 6: MACHINE LEARNING MODEL TRAINING
+================================================================================
+ML Dataset Prepared:
+  Patients: 25,677
+  Features: 43
+  Target range: 1.7 - 2441.7 hours
+
+Feature Selection:
+  Selecting top 43 features from 43 available
+  Selected 43 features
+
+Feature Scaling...
+  Features scaled to mean=0, std=1
+
+Training Machine Learning Models...
+Large dataset (25,677 patients): Using train-test split
+
+  Training Ridge_Regression...
+    RMSE: 1253.5 hours (52.2 days)
+    MAE: 81.4 hours
+    R²: -105.751
+
+  Training Random_Forest...
+    RMSE: 115.6 hours (4.8 days)
+    MAE: 62.5 hours
+    R²: 0.093
+
+  Training Gradient_Boosting...
+    RMSE: 115.9 hours (4.8 days)
+    MAE: 62.5 hours
+    R²: 0.088
+   Function train_and_evaluate_models profiled: 48.96s
+   Profile saved to: /tmp/profiles/train_and_evaluate_models_profile.txt
+  Saved: model_comparison.png
+  Saved: performance_assessment.png
+Model performance plots saved
+✅ Completed Phase: Machine Learning Model Training
+   Duration: 50.7 seconds (0.8 minutes)
+   Memory Delta: +2.1 MB
+   End Memory: 11309.8 MB
+
+🔄 Starting Phase: Final Results Analysis
+   Start Time: 18:38:31
+   Memory Usage: 11309.8 MB
+
+================================================================================
+MACHINE LEARNING RESULTS ANALYSIS
+================================================================================
+Dataset Summary:
+  Patients analyzed: 25,677
+  Features used: 43
+  Validation method: Train-Test Split
+
+Model Performance:
+
+  Ridge_Regression:
+    RMSE: 1253.5 hours (52.2 days)
+    MAE: 81.4 hours
+    R²: -105.751
+    Performance below baseline
+
+  Random_Forest:
+    RMSE: 115.6 hours (4.8 days)
+    MAE: 62.5 hours
+    R²: 0.093
+    Explains 9.3% of variance
+
+  Gradient_Boosting:
+    RMSE: 115.9 hours (4.8 days)
+    MAE: 62.5 hours
+    R²: 0.088
+    Explains 8.8% of variance
+
+Best Model: Random_Forest
+  RMSE: 115.6 hours (4.8 days)
+  R²: 0.093
+
+Clinical Interpretation:
+  Dataset size: 25,677 patients
+  LOS range: 1.7 - 2441.7 hours
+  Prediction accuracy: ±115.6 hours
+  Relative error: 4.7% of total range
+  Excellent prediction accuracy
+
+Plots and Results:
+  All plots saved to: /mnt/disks/ssd/plots/
+  Files created:
+    - los_distribution.png: LOS analysis
+    - correlation_matrix.png: Feature correlations
+    - feature_importance.png: Top predictive features
+    - dataset_overview.png: Dataset statistics
+    - clinical_analysis.png: Clinical measurements analysis
+    - model_comparison.png: Model performance comparison
+    - performance_assessment.png: Performance evaluation
+
+Processing Complete!
+  Successfully processed complete CHARTEVENTS dataset
+  Analyzed 25,677 patients with clinical monitoring data
+  Built predictive model for ICU length of stay
+  Generated comprehensive analysis plots
+✅ Completed Phase: Final Results Analysis
+   Duration: 0.0 seconds (0.0 minutes)
+   Memory Delta: +0.0 MB
+   End Memory: 11309.8 MB
+
+🔄 Starting Phase: Performance Analysis
+   Start Time: 18:38:31
+   Memory Usage: 11309.8 MB
+
+================================================================================
+PERFORMANCE BOTTLENECK ANALYSIS
+================================================================================
+Time Distribution:
+  Big Data Processing with Dask:   4535.6s ( 98.3%)
+  Machine Learning Model Training:     50.7s (  1.1%)
+  Data Preprocessing       :     21.7s (  0.5%)
+  Data Visualization and Analysis:      5.6s (  0.1%)
+  Data Loading & Exploration:      0.4s (  0.0%)
+  Feature Matrix Creation  :      0.2s (  0.0%)
+  Target Variable Preparation:      0.0s (  0.0%)
+  Final Results Analysis   :      0.0s (  0.0%)
+
+Performance Recommendations:
+  🔴 Major bottleneck in Big Data Processing with Dask (4535.6s)
+     - Consider reducing CHUNK_SIZE from 5000 to 2500
+     - Enable Dask distributed processing
+     - Use SSD storage for temporary files
+  🟡 High memory usage phases:
+     - Big Data Processing with Dask: +11027.0 MB
+
+Efficiency Metrics:
+  Processing Rate: 5.6 patients/second
+  Total Throughput: 25,677 patients in 76.9 minutes
+
+Scaling Projections:
+  For 100K patients: ~5.0 hours
+  For 1M patients: ~49.9 hours
+✅ Completed Phase: Performance Analysis
+   Duration: 0.0 seconds (0.0 minutes)
+   Memory Delta: +0.0 MB
+   End Memory: 11309.8 MB
+
+================================================================================
+PERFORMANCE SUMMARY
+================================================================================
+Total Execution Time: 4614.3 seconds (76.9 minutes)
+Start Time: 2025-06-07 17:21:37
+End Time: 2025-06-07 18:38:31
+
+Phase Breakdown:
+Phase                     Duration (s) Duration (min)  Memory Δ (MB)  
+-------------------------------------------------------------------
+Data Loading & Exploration 0.4          0.0             70.9           
+Big Data Processing with Dask 4535.6       75.6            11027.0        
+Feature Matrix Creation   0.2          0.0             -2.8           
+Data Preprocessing        21.7         0.4             -20.8          
+Target Variable Preparation 0.0          0.0             -1.0           
+Data Visualization and Analysis 5.6          0.1             -25.4          
+Machine Learning Model Training 50.7         0.8             2.1            
+Final Results Analysis    0.0          0.0             0.0            
+Performance Analysis      0.0          0.0             0.0            
+
+Performance Analysis:
+  Slowest Phase: Big Data Processing with Dask (4535.6s)
+  Most Memory Intensive: Big Data Processing with Dask (+11027.0 MB)
+
+📊 Performance report saved to: /mnt/disks/ssd/plots/performance_report.txt
+📈 Profiling files saved to: /tmp/profiles/
+   - train_and_evaluate_models_profile.txt
+   - process_complete_dataset_in_chunks_profile.txt
+
+================================================================================
+ICU LENGTH OF STAY PREDICTION - COMPLETE ANALYSIS WITH PROFILING FINISHED
+================================================================================

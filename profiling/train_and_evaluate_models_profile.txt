@@ -1,0 +1,26 @@
+         597557 function calls (589944 primitive calls) in 48.954 seconds
+
+   Ordered by: cumulative time
+   List reduced from 523 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   48.958   48.958 /mnt/disks/ssd/big_data_full2.py:1096(train_and_evaluate_models)
+        3    0.000    0.000   48.818   16.273 /opt/venv/lib/python3.12/site-packages/sklearn/base.py:1346(wrapper)
+        2    0.000    0.000   48.804   24.402 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_forest.py:327(fit)
+        4    0.000    0.000   48.696   12.174 /opt/venv/lib/python3.12/site-packages/sklearn/utils/parallel.py:54(__call__)
+        4    0.001    0.000   48.696   12.174 /opt/venv/lib/python3.12/site-packages/joblib/parallel.py:1969(__call__)
+      608    0.005    0.000   48.695    0.080 /opt/venv/lib/python3.12/site-packages/joblib/parallel.py:1888(_get_sequential_output)
+      600    0.009    0.000   48.669    0.081 /opt/venv/lib/python3.12/site-packages/sklearn/utils/parallel.py:131(__call__)
+      300    0.047    0.000   48.540    0.162 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_forest.py:150(_parallel_build_trees)
+      300   48.118    0.160   48.309    0.161 /opt/venv/lib/python3.12/site-packages/sklearn/tree/_classes.py:231(_fit)
+      300    0.002    0.000    0.213    0.001 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_base.py:135(_make_estimator)
+     1503    0.010    0.000    0.178    0.000 /opt/venv/lib/python3.12/site-packages/sklearn/base.py:233(get_params)
+      300    0.084    0.000    0.173    0.001 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_forest.py:124(_generate_sample_indices)
+     1503    0.018    0.000    0.164    0.000 /opt/venv/lib/python3.12/site-packages/sklearn/base.py:202(_get_param_names)
+      903    0.077    0.000    0.159    0.000 /opt/venv/lib/python3.12/site-packages/sklearn/utils/validation.py:1488(check_random_state)
+     1513    0.001    0.000    0.138    0.000 /usr/lib/python3.12/inspect.py:3308(signature)
+     1513    0.001    0.000    0.137    0.000 /usr/lib/python3.12/inspect.py:3050(from_callable)
+     1513    0.009    0.000    0.136    0.000 /usr/lib/python3.12/inspect.py:2470(_signature_from_callable)
+     1513    0.037    0.000    0.122    0.000 /usr/lib/python3.12/inspect.py:2366(_signature_from_function)
+        2    0.000    0.000    0.120    0.060 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_forest.py:1044(predict)
+      300    0.002    0.000    0.095    0.000 /opt/venv/lib/python3.12/site-packages/sklearn/ensemble/_forest.py:723(_accumulate_prediction)
